@@ -1,0 +1,52 @@
+Question 1
+
+Part A: The current code loses the rest of the list beyond node 2 and causes a loop that switches between node 1 and node 2.
+
+Part B: public void insertNodePair(Listnode<E> node1, Listnode<E> node2, int pos){
+
+   		 if (node1 == null || node2 == null){
+     		   throw new IllegalArgumentsException();
+   		 }
+   		 if (pos < 0 || pos > numItems){
+   		     throw new IndexOutOfBoundsException();
+  		 }
+   		 Listnode<E> curr = items;
+   		 or (int k = 0; k < pos; k++) {
+       			 curr = curr.getNext();
+   		 }
+		 node2.setNext(curr.getNext());
+    		 node1.setNext(node2);
+ 		 curr.setNext(new Listnode<E>(node1.getData()));
+   		 
+   		 numItems += 2;  
+
+}
+
+Question 2
+
+public LinkedList<E> evensList(){
+    if (head.getData() == null){
+	throw new IllegalArgumentsException();
+    }
+    Listnode<E> curr = new Listnode<E>(head.getData());
+
+    LinkedList<E> evensList = new LinkedList<E>(curr.getData());
+    Listnode<E> EvensCurr = new Listnode<E>(evensList.getData());
+    //While there are two nexts
+    while(curr.getNext()!= null) {
+   	 while(curr.getNext().getNext != null) {
+   		curr = curr.getNext().getNext();
+		Listnode<E> tmp = new Listnode<E>(curr.getData());
+evensCurr.setNext(tmp);
+   		evensCurr =  evensCurr.getNext();
+		
+   	 }
+    }
+
+    return evensList;
+}
+
+
+Question 3
+
+Sorry for poor use of whitespace, did this on VIM and it was not easy.

@@ -1,0 +1,146 @@
+Breakpoint 1, 0x080485a7 in main ()
+(gdb) info registers
+eax            0xffffd784	-10364
+ecx            0x1a2b079e	439027614
+edx            0x1	1
+ebx            0x1	1
+esp            0xffffd4b0	0xffffd4b0
+ebp            0xffffd6d8	0xffffd6d8
+esi            0x905440	9458752
+edi            0x80498e8	134519016
+eip            0x80485a7	0x80485a7 <main+61>
+
+0x080485ad in main ()
+(gdb) info registers
+eax            0xffffd784	-10364
+ecx            0x1a2b079e	439027614
+edx            0x1	1
+ebx            0x1	1
+esp            0xffffd4b0	0xffffd4b0
+ebp            0xffffd6d8	0xffffd6d8
+esi            0x905440	9458752
+edi            0x80498e8	134519016
+eip            0x80485ad	0x80485ad <main+67>
+
+0x080485af in main ()
+(gdb) info registers
+eax            0xffffd784	-10364
+ecx            0x1a2b079e	439027614
+edx            0x1	1
+ebx            0x1	1
+esp            0xffffd4b0	0xffffd4b0
+ebp            0xffffd6d8	0xffffd6d8
+esi            0x905440	9458752
+edi            0x80498e8	134519016
+eip            0x80485af	0x80485af <main+69>
+
+0x080485b3 in main ()
+(gdb) info registers
+eax            0xffffd784	-10364
+ecx            0x1a2b079e	439027614
+edx            0x1	1
+ebx            0x1	1
+esp            0xffffd4b0	0xffffd4b0
+ebp            0xffffd6d8	0xffffd6d8
+esi            0x905440	9458752
+edi            0x80498e8	134519016
+eip            0x80485b3	0x80485b3 <main+73>
+
+0x080485ba in main ()
+(gdb) info registers
+eax            0xffffd784	-10364
+ecx            0x1a2b079e	439027614
+edx            0x1	1
+ebx            0x1	1
+esp            0xffffd4b0	0xffffd4b0
+ebp            0xffffd6d8	0xffffd6d8
+esi            0x905440	9458752
+edi            0x80498e8	134519016
+eip            0x80485ba	0x80485ba <main+80>
+
+0x080485bf in main ()
+(gdb) info registers
+eax            0x10	16
+ecx            0xffffd498	-11112
+edx            0x906340	9462592
+ebx            0x1	1
+esp            0xffffd4b0	0xffffd4b0
+ebp            0xffffd6d8	0xffffd6d8
+esi            0x905440	9458752
+edi            0x80498e8	134519016
+eip            0x80485bf	0x80485bf <main+85>
+
+0x080485c3 in main ()
+(gdb) info registers
+eax            0x10	16
+ecx            0xffffd498	-11112
+edx            0x906340	9462592
+ebx            0x1	1
+esp            0xffffd4b0	0xffffd4b0
+ebp            0xffffd6d8	0xffffd6d8
+esi            0x905440	9458752
+edi            0x80498e8	134519016
+eip            0x80485c3	0x80485c3 <main+89>
+
+0x080485cb in main ()
+(gdb) info registers
+eax            0x10	16
+ecx            0xffffd498	-11112
+edx            0x906340	9462592
+ebx            0x1	1
+esp            0xffffd4b0	0xffffd4b0
+ebp            0xffffd6d8	0xffffd6d8
+esi            0x905440	9458752
+edi            0x80498e8	134519016
+eip            0x80485cb	0x80485cb <main+97>
+
+0x080485cf in main ()
+(gdb) info registers
+eax            0xffffd4c0	-11072
+ecx            0xffffd498	-11112
+edx            0x906340	9462592
+ebx            0x1	1
+esp            0xffffd4b0	0xffffd4b0
+ebp            0xffffd6d8	0xffffd6d8
+esi            0x905440	9458752
+edi            0x80498e8	134519016
+eip            0x80485cf	0x80485cf <main+101>
+
+0x080485d2 in main ()
+(gdb) info registers
+eax            0xffffd4c0	-11072
+ecx            0xffffd498	-11112
+edx            0x906340	9462592
+ebx            0x1	1
+esp            0xffffd4b0	0xffffd4b0
+ebp            0xffffd6d8	0xffffd6d8
+esi            0x905440	9458752
+edi            0x80498e8	134519016
+eip            0x80485d2	0x80485d2 <main+104>
+
+guess 1 (of 5)? 20      
+0x080485d7 in main ()
+(gdb) info registers
+eax            0xffffd4c0	-11072
+ecx            0x0	0
+edx            0x906334	9462580
+ebx            0x1	1
+esp            0xffffd4b0	0xffffd4b0
+ebp            0xffffd6d8	0xffffd6d8
+esi            0x905440	9458752
+edi            0x80498e8	134519016
+eip            0x80485d7	0x80485d7 <main+109>
+
+0x080485d9 in main ()
+(gdb) info registers
+eax            0xffffd4c0	-11072
+ecx            0x0	0
+edx            0x906334	9462580
+ebx            0x1	1
+esp            0xffffd4b0	0xffffd4b0
+ebp            0xffffd6d8	0xffffd6d8
+esi            0x905440	9458752
+edi            0x80498e8	134519016
+eip            0x80485d9	0x80485d9 <main+111>
+
+

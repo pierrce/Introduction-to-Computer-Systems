@@ -1,0 +1,49 @@
+/* Assignment1 intrev
+ * by Alec Pierce, Lecture 2 and Dan Hayes, Lecture 1
+ *
+ * The program takes an input .int file and
+ * prints the content of that file one line
+ * at a time.
+ *
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <assert.h>
+#include <unistd.h>
+
+int main(int argc, char *argv[])
+{
+
+  int fd;
+  int buffer;
+
+  if (argc != 2)
+  {
+    fprintf(stderr, "usage: intcat <input_file>\n");
+    exit(1);
+  }
+
+  if ((fd = open(argv[1], O_RDONLY)) < 0)
+  {
+    printf("Could not open file: %s\n", argv[1]);
+    exit(1);
+  }
+
+  while(read(fd, &buffer, sizeof(int)) != 0)
+  {
+    printf("%d\n", buffer);
+  }
+
+  if (close(fd) == -1) 
+  {
+        fprintf(stderr, "error closing file -- quitting");
+	exit(1);
+  }
+
+  return 0;
+
+}

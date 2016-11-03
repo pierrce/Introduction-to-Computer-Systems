@@ -1,0 +1,84 @@
+Homework 7
+
+1. (a) All of the above are trees except ii.
+   (b) i, iii, iv
+   (c) i, iv
+   (d) 4 3 2 6 5
+   (e) 7 20 30 23 38 23 11
+
+2. (a)         
+         30
+     /        \
+    11        36
+   /  \      /  \
+  9   12    33  45 
+ / \    \      /  \
+6   10  22    39  47
+
+   (b)
+         30
+     /        \
+    11        36
+   /  \      /  \
+  9   12    33  45 
+   \    \      /  \
+    10  22    39  47
+             /
+            37
+
+   (c)
+         30
+     /        \
+    11        36
+   /  \      /  \
+  9   22    33  45 
+   \           /  \
+    10        39  47
+
+   (d)
+         22
+     /        \
+    11        36
+   /  \      /  \
+  9   12    33  45 
+   \           /  \
+    10        39  47
+
+   (e)
+         33
+     /        \
+    11        36
+   /  \         \
+  9   12        45 
+   \    \      /  \
+    10  22    39  47
+
+3.  public static boolean isBST(BSTnode<K> root){
+
+	boolean x = true;
+
+        if(root = null) return true;
+
+	if(root.getLeft().compareTo(root.getKey()) > 0) {
+		return false;
+	}
+
+        if(root.getRight().compareTo(root.getKey()) < 0) {
+		return false;
+	}
+
+	if(root.getLeft().compareTo(root.getKey()) < 0) {
+		x = isBST(root.getLeft());
+	}
+
+	if(x == false) return false;
+
+	if(root.getRight().compareTo(root.getKey()) > 0) {
+		x = isBST(root.getRight());
+	}
+
+	if(x == false) return false;
+
+	return true;
+    }   
+

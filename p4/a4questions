@@ -1,0 +1,121 @@
+Name (and partner's name): Alec Pierce
+Section (and partner's section): Section 2
+
+Assignment 4 questions.
+Do not remove the questions from this file.
+Please indent your answers.
+
+For ALL cache simulations, use a capacity of 16384 bytes for both 
+the I-cache and the D-cache.
+
+cache1D
+-------
+
+Describe how you tested your code to verify that it works.
+
+	Inserted a printf() within a for loop at the end of the code. It printed a lot of numbers, the last one was 99999. So I concluded it worked.
+
+What do you get from running pin with a block size of 4 bytes?
+
+	Instruction cache misses:       5902
+	Instruction cache references:   695682
+	Data cache misses:              107097
+	Data cache references:          646565
+
+What is the hit ratio for the I-cache with a block size of 4 bytes?
+
+	Hit Ratio: 99.2%
+
+What is the hit ratio for the D-cache with a block size of 4 bytes?
+
+	Hit Ratio: 83.4%
+
+What do you get from running pin with a block size of 32 bytes?
+
+	Instruction cache misses:       1162
+	Instruction cache references:   695682
+	Data cache misses:              14917
+	Data cache references:          646565
+
+What is the hit ratio for the I-cache with a block size of 32 bytes?
+
+	Hit Ratio: 99.8%
+
+What is the hit ratio for the D-cache with a block size of 32 bytes?
+
+	Hit Ratio: 97.7%
+
+What do you get from running pin with a block size of 64 bytes?
+
+	Instruction cache misses:       704
+	Instruction cache references:   695682
+	Data cache misses:              8483
+	Data cache references:          646565
+
+What is the hit ratio for the I-cache with a block size of 64 bytes?
+
+	Hit Ratio: 99.9%
+
+What is the hit ratio for the D-cache with a block size of 64 bytes?
+
+	Hit Ratio: 98.7%
+
+Which block size is best for the I-cache?  Why?
+
+	64 bytes is the best block size for I-cache because it had the highest hit ratio, but only slightly. The differences could almost be neglectable.
+
+Which block size is best for the D-cache?  Why? In what way does the block 
+  size affect the hit ratio for this program?
+
+	64 bytes is the best block size for D-cache because it had the highest hit ratio. The higher the block size, the higher the ratio.
+  
+
+cache2Drows
+-----------
+
+What do you get from running pin with a block size of 64 bytes?
+
+	Instruction cache misses:       713
+	Instruction cache references:   16616704
+	Data cache misses:              106704
+	Data cache references:          12061570
+
+What is the hit ratio for the I-cache with a block size of 64 bytes?
+
+	Hit Ratio: 99.996%
+
+What is the hit ratio for the D-cache with a block size of 64 bytes?
+
+	Hit Ratio: 99.1%
+
+cache2Dcols
+-----------
+
+What do you get from running pin with a block size of 64 bytes?
+
+	Instruction cache misses:       702
+	Instruction cache references:   16599204
+	Data cache misses:              1513407
+	Data cache references:          12049070
+
+What is the hit ratio for the I-cache with a block size of 64 bytes?
+
+	Hit Ratio: 99.996%
+
+What is the hit ratio for the D-cache with a block size of 64 bytes?
+
+	Hit Ratio: 87.4%
+
+Comparison of cache2Drows and cache2Dcols
+-----------------------------------------
+
+Compare the performance (hit ratios) of the I-cache for these 2 programs.
+Justify your statistics.
+
+	The performance of the I-cache for both programs are nearly identical. This is because the amount of instructions required for each program is roughly the same.
+
+Compare the performance (hit ratios) of the D-cache for these 2 programs.
+Explain any differences.
+
+	The performance of the D-cache for both program vary. cache2Dcols has a worse hit ratio than cache2Drows. This is due to how the arrays are set up in memory. Since a 2D array is an array of arrays, the values of the first array will come before the values of the second array in memory. cache2Drows is able to just go down the memory in order to set the values, however, cache2Dcols has to jump between the rows first in order to place the values of the cols. This forces the program to jump around in memory rather than just simply moving along the locations of memory, causing a higher data cache misses and a worse ratio. 
+

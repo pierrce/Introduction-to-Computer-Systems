@@ -1,0 +1,76 @@
+Q1 Part A
+
+public void add(int pos, E item) {
+
+		private boolean isFull;
+		private int maxPos;
+		private int lowPos;
+		
+		//Gets maxPos;
+		for(int i = ListADT.size(); i>0; i--) {
+			if(ListADT.get(i)!=null) {
+				maxPos++;
+			}
+		}
+		
+		//Get lowest position;
+		for(int i = 0; i<ListADT.size(); i++) {
+			if(ListADT.get(i) != null) {
+			 lowPos++;
+			}
+		}
+
+		if (pos>maxPos && pos<0) throw new IndexOutOfBoundsException;
+
+		
+		else {
+		
+			//If array is full, adds a location.
+			for(int i = 0; i<ListADT.size(); i++) {
+				if(ListADT.get(i) == null && isFull == true) {
+					isFull = false;
+				}
+			}
+			
+			if(isFull) {
+				ListADT.expandArray();
+			}
+		
+		}
+
+		//Moves all objects to the left of pos.
+		for(int i = 0; i<(pos); i++) {
+			ListADT.set((lowPos+i)-1) = ListADT.get(lowPos+i);
+		}
+
+		//Adds new object to the ADT.
+		ListADT.set(lowPos + pos - 1) = item;
+
+	}
+	
+Q1 Part B
+
+ [X,X,"Sandra","Jack","Franz"]
+ [X,"Sandra","Sandra","Jack","Franz"]
+ [X,"Sandra","Jack","Jack","Franz"]
+ [X,"Sandra","Jack","Terricloth","Franz"]
+  
+Q1 Part C 
+
+Disadvantage 1: Array index is not equal to the list positioning.
+Disadvantage 2: Slower due to more code making up for Disadvantage 1.
+
+Q2 
+
+public void loopFromStart(List<String> myList, int startPos){
+     
+	if(startPos>myList.size() || startPos<0) throw new IndexOutOfBoundsException;
+
+	else {
+		Iterator<String> itr = myList.iterator();
+		for(int i = 0; i<startPos; i++) {
+			myList.add(itr.next());
+			itr.remove();
+		}
+	}
+}

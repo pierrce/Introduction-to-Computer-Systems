@@ -1,0 +1,60 @@
+Alec Pierce CS367 Homework 10
+
+1) 
+
+Visited Vertexes and              |       Priority Queue's items
+their shortest distances          |       (listed in increasing order)
+from start                        |
+
+-                                         (0,A)
+A-0                                       (1,B)(2,F)(3,D)(5,C)
+B-1                                       (2,F)(3,D)(5,C)(5,E)
+F-2                                       (3,D)(3,E)(5,C)
+D-3                                       (3,E)(4,G)(5,C)
+E-3                                       (4,G)(5,C)
+G-4                                       (C,5)
+C-5
+
+
+
+2) (a)
+    
+Node   Directionally-Linked to
+D      B,c
+C      D
+B      A
+A      
+
+- Start at node D or C and then do a breadth-first search. The only possible set results are:
+
+{D,C,B,A}
+{D,B,C,A}
+{C,D,B,A}
+                                                                          	 
+(b)
+
+{A,B,C,D,E}
+{A,B,C,E,D}
+{A,B,E,C,D}
+{A,B,E,D,C}
+{A,B,D,E,C}
+{A,B,D,C,E}
+
+3) (a)
+
+Pivot Selection: *38*  78  44  39  13  53  *36*  8  65  93  77  81  *20*
+
+Pivot Partition: 20  *78*  44  39  13  53   8  65  93  77  *81*  *36*  38
+                 20  *78*  44  39  13  53   8  65  93  *77*  81  *36*  38
+                 20  *78*  44  39  13  53   8  65  *93*  77  81  *36*  38
+                 20  *78*  44  39  13  53   8  *65*  93  77  81  *36*  38
+                 20  *78*  44  39  13  53   *8*  65  93  77  81  *36*  38
+                 20  *8*  44  39  13  53   *78*  65  93  77  81  *36*  38
+                 20  8  *44*  39  13  *53*   78  65  93  77  81  *36*  38
+                 20  8  *44*  39  *13*  53   78  65  93  77  81  *36*  38
+                 20  8  *13*  39  *44*  53   78  65  93  77  81  *36*  38
+                 20  8  13  *39*  44  53   78  65  93  77  81  *36*  38
+
+Pivot Placement: 20  8  13  *36*  39  44  53   78  65  93  77  81  38               
+
+(b) O(n)

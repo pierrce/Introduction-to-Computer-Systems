@@ -1,0 +1,85 @@
+Q1:
+
+public void loopFromStart(int startPos) {
+
+	listNode<E> startNode = null;
+	listNode<E> currentNode = null;
+
+	startNode = this.get(startPos);
+	currentNode = startNode.getNext();
+	System.out.println(startNode.getData());
+
+	while(currentNode != startNode) {
+		System.out.println(currentNode.getData());
+		currentNode = currentNode.getNext();
+	}
+}
+
+Q2:
+
+(a) Algorithm 1: O(log(N))
+    Algorithm 2: O(N^2)
+    Algorithm 3: O(N^2)
+
+(b) Algorithm 1
+
+(c) No, when dealing with small sets using a simpler implementation such as a quadratic forumula over a log formula would be preferable.
+
+Q3: (a)
+
+public static boolean isPalindrome (Listnode<Integer> head, int numItems) {
+
+  Listnode<Integer> currentNode;
+
+  while(numItems > 0) {
+
+	currentNode = head;
+  
+	for(int i = 0; i<numItems; i++) {
+		currentNode = currentNode.getNext();
+	}
+
+	if(currentNode.getData() != head.getData()){
+		return false;
+	}
+
+	numItems = numItems - 2;
+	head = head.getNext();
+
+  }
+
+  return true; 
+
+}
+
+Time Complexity = O(N^2)
+
+(b)
+
+public static boolean isPalindrome (DblListnode<Integer> head, int numItems) {
+
+  DblListnode<Integer> currentNode = head.getPrevious();
+
+  while(numItems > 0) {
+
+	if(currentNode.getData() != head.getData()){
+		return false;
+	}
+
+	currentNode = currentNode.getPrevious();
+	head = head.getNext();
+
+	numItems = numItems - 2;
+
+  }
+
+  return true; 
+
+}
+
+Time Complexity = O(N) Regardless of the size of the list, it always only goes through once. Therefore, the time it takes is linearly dependent on the size of the list.
+
+
+
+
+

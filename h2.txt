@@ -1,0 +1,110 @@
+Problem 1
+
+(a) "main begin", "main caught ex1", "main finally", "main end"
+(b) "Program Terminated due to Exception Ex3"
+(c) "Program Terminated due to Exception Ex3"
+(d) "main being", "a begin", "b begin", "b finally", "a caught Ex2, "a end", "c begin", "c caught Ex2", "c finally", "c end", "main finally", "main end"
+
+(e) 
+
+void main( )
+{
+    println("main begin");
+    try {
+        a();
+        c();
+    } catch (Ex1 ex) {
+        println("main caught Ex1");
+    } catch (Ex3 ex) {
+	println("main caught Ex3");
+    } finally {
+        println("main finally");
+    }
+    println("main end");
+}
+
+void a( ) {
+    println("a begin");
+    try {
+        if (var1){
+            b();
+        }
+        else{
+            throw new Ex1();
+        }
+    } catch (Ex2 ex) {
+        println("a caught Ex2");
+    } catch (Ex3 ex) {
+        println("a caught Ex3");
+    }
+    println("a end");
+}
+
+void b( ) {
+    println("b begin");
+    try {
+        if (var2){
+            c();
+        }
+        else{
+            throw new Ex2();
+		}
+    } catch (Ex3 ex) {
+        println("b caught Ex3");
+    } finally {
+        println("b finally");
+    }
+    println("b end");
+}
+
+void c( ) {
+    println("c begin");
+    try {
+        if (var3){
+            throw new Ex2();
+        }
+        else{
+            throw new Ex3();
+        }
+    } catch (Ex2 ex) {
+        println("c caught Ex2");
+    } finally {
+        println("c finally");
+    }
+    println("c end");
+}
+
+Problem 2
+
+public void main(String[] args)
+{
+    Scanner scanner = new Scanner(System.in);
+    filePath = Scanner.nextLine();
+    while (1)
+    {
+        try {
+            FileStream file(filePath);
+            Memory mem;
+            mem.allocate(file.length());
+            mem.read(file);
+            file.close();	
+            break;
+        } 
+	catch (FileNotExistException ex) {
+		System.out.println("Cannot open file. Enter file path again.");
+		filePath = Scanner.nextLine();
+	}
+	catch (FileCloseFailedError ex) {
+		 System.out.println("Cannot close file.");
+	}
+	catch (MemoryAllocationFailedError ex) {
+ 		System.out.println("Cannot allocate enough memory.");
+	}
+	catch (ReadFailedException ex) {
+ 		System.out.println("Cannot read file into memory.");
+	}
+	    
+        
+    }
+}
+

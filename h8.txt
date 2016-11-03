@@ -1,0 +1,55 @@
+HW 8
+
+1.
+ 
+public static BinaryTreenode<K> convert2LCRS(TrinaryTreenode<K> triTreeRoot) {
+
+	if(triTreeRoot.getLeft() == null) {
+		BinaryTreenode<k> leaf =
+			new BinaryTreenode<K>(triTreeRoot.getKey());
+		return leaf;
+	}
+
+	BinaryTreenode<K> left = convert2LCRS(triTreeRoot.getLeft());
+	BinaryTreenode<K> right = convert2LCRS(triTreeRoot.getRight());
+	BinaryTreenode<K> mid = convert2LCRS(triTreeRoot.getMid());
+	left.setRight(mid );
+	mid.setRight(right);
+
+	BinaryTreenode<K> root = new BinaryTreenode<K>(triTreeRoot.getKey());
+	root.setRight(left);
+
+	return(root);
+
+}
+
+
+2. (a) 
+
+                   (44)
+                   /  \
+            [22]         [88]
+            /  \         /  \
+          (11)(33)   (66)   (99)
+                    /    \
+                 [55]    [77]
+   (b)
+
+                   (55)
+                  /    \
+             [22]        [77]
+            /    \      /    \
+          (11)  (33) (66)    (88)
+                    /            \
+                   [44]        [99]
+3. (a)
+
+[88, 72, 33, 43, 26, 19, 21, 5, 9]
+
+   (b)
+
+[x, 17, 22, 24, 47, 32, 32, 26]
+
+
+
+

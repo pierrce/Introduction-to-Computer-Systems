@@ -1,0 +1,65 @@
+/* Assignment1 strcat
+ * by Alec Pierce, Lecture 2 and Dan Hayes, Lecture 1
+ * September 25, 2014
+ *
+ * The program takes an input .str file prints the
+ * contents of the file one line at a time.
+ *
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <assert.h>
+#include <unistd.h>
+
+/* 
+ * The main and only function of the program.
+ * 
+ * Parameters:
+ *   infile: a pointer to the infile given by arg[1]
+ *   file: a pointer to the current open file
+ *   line: an array of character which holds the current
+           line being printed.
+ */
+int main (int argc, char *argv[])
+{
+
+  char *infile;
+
+  /*If there are more or less than 2 arguments passed,
+    prints error*/
+  if (argc != 2)
+  {
+    fprintf(stderr, "usage: strcat <input_file>\n");
+    exit(1);
+  }
+
+  infile = argv[1];
+  FILE *file = fopen ( infile, "r" );
+
+  if (file != NULL) 
+  {
+
+    char line [1000];
+
+    /*While content of the line exists, prints line*/
+    while(fgets(line,sizeof line,file)!= NULL) 
+    {
+      fprintf(stdout,"%s",line); 
+    }
+
+    fclose(file);
+  }
+
+  /*If file is equal to null, prints error*/
+  else 
+  {
+    perror(infile); 
+  }
+
+  return 0;
+
+}
